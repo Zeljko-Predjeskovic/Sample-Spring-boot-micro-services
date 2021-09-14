@@ -3,4 +3,4 @@ pipelines:
     - step:
         name: Hello World
         script:
-          - echo hello worlde
+          - echo hello world!!
