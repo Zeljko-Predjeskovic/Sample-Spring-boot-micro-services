@@ -1,4 +1,4 @@
-maven:3.8.1-openjdk-17-slim
+maven:3.6.3-jdk-17
 
 pipelines:
   default:
@@ -11,3 +11,4 @@ pipelines:
             - cd ./Predjeskovic.Microservice.Calendar
             - mvn clean
             - mvn compile
+            - mvn test
