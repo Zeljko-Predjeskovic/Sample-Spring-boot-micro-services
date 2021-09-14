@@ -4,9 +4,10 @@ pipelines:
   default:
     - parallel:
       - step:
-          name: Build and Test
+          name: Build and Test Calendar
           caches:
             - maven
           script:
+            - cd ./Predjeskovic.Microservice.Calendar
             - mvn clean
             - mvn compile
