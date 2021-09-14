@@ -1,4 +1,4 @@
-image: maven:4.0.0
+image: maven:3.6.3
 
 pipelines:
   default:
