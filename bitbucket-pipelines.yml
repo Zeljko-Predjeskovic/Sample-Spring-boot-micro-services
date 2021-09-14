@@ -1,6 +1,12 @@
+image: maven:4.0.0
+
 pipelines:
   default:
-    - step:
-        name: Hello World
-        script:
-          - echo hello world!!
+    - parallel:
+      - step:
+          name: Build and Test
+          caches:
+            - maven
+          script:
+            - mvn clean
+            - mvn compile
