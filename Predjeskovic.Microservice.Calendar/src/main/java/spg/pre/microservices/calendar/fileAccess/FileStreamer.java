@@ -4,7 +4,7 @@ import java.io.File;
 
 public interface FileStreamer{
 
-    void fileWriteline(File f);
+    void fileWriteline(Note note);
 
-    Note fileReadOneLine(File f, String id);
+    Note fileReadOneLine(String id);
 }

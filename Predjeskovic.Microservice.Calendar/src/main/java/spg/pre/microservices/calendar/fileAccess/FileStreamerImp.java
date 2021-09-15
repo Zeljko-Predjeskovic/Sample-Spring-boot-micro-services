@@ -1,8 +1,6 @@
 package spg.pre.microservices.calendar.fileAccess;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -10,15 +8,28 @@ public class FileStreamerImp implements FileStreamer{
 
     private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
+    private final File file;
 
-    public void fileWriteline(File f) {
+    public FileStreamerImp(File file) {
+        this.file = file;
+    }
 
+
+    public void fileWriteline(Note note) {
+        String line = ""+note.getId()+","+note.getTitle()+","+note.getDescription()+","
+                +note.getCalendarDate().format(dateTimeFormatter)+"\n";
+
+        try (PrintWriter out = new PrintWriter(new FileWriter(file))) {
+                out.print(line);
+            }
+         catch (Exception e) {
+            throw new RuntimeException("Writing failed! ",e);
+        }
     }
 
     @Override
-    public Note fileReadOneLine(File f, String id) {
-
-        try (BufferedReader br = new BufferedReader(new FileReader(f))) {
+    public Note fileReadOneLine(String id) {
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line = null;
             while ((line = br.readLine()) != null) {
 
@@ -31,12 +42,12 @@ public class FileStreamerImp implements FileStreamer{
         } catch (Exception e) {
             throw new RuntimeException("Reading failed! ",e);
         }
-        return null;
+        throw new RuntimeException("Line could not be red!!");
     }
 
     public boolean checkId(String idWanted, String idReading){
         if(idWanted.equals(idReading))
             return true;
-        return false;
+        throw new IllegalArgumentException("Is not the same id!!");
     }
 }
