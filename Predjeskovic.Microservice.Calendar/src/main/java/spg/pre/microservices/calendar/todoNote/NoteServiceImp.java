@@ -1,5 +1,7 @@
 package spg.pre.microservices.calendar.todoNote;
 
+import spg.pre.microservices.calendar.fileAccess.FileQueriesImpl;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -10,7 +12,7 @@ public class NoteServiceImp implements NoteService {
 
     @Override
     public List<NoteDto> getAllNotes() {
-        var notes = fileQueries.findAllNotes().values().stream()
+        var notes = fileQueries.findAllNotes().stream()
                 .map(f-> new NoteDto(f.getId(),f.getTitle(),f.getDescription(),f.getCalendarDate())).toList();
         return notes;
     }

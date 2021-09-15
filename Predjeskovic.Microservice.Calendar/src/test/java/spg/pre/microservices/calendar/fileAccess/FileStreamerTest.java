@@ -10,7 +10,6 @@ public class FileStreamerTest {
 
     private FileStreamerImp fileStreamer = new FileStreamerImp(new File(System.getProperty("testingFile")));
 
-
     @Test
     public void writeFileAndReadIt(){
     fileStreamer.fileWriteline(new Note("ABC","Title","Descr", LocalDate.of(2000,12,5)));
@@ -18,4 +17,7 @@ public class FileStreamerTest {
                 .fileReadOneLine("ABC").getId().equals("ABC"));
     }
 
+    @Test void readAllLines(){
+        Assertions.assertTrue(fileStreamer.fileReadAllLines()!=null);
+    }
 }

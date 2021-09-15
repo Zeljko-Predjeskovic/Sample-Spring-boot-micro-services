@@ -1,16 +1,17 @@
-package spg.pre.microservices.calendar.todoNote;
+package spg.pre.microservices.calendar.fileAccess;
 
 import spg.pre.microservices.calendar.fileAccess.Note;
 
 import java.util.HashMap;
+import java.util.List;
 
 public interface FileQueries {
 
-    public HashMap<String, Note> findAllNotes();
+    public List<Note> findAllNotes();
 
     public Note findOneNote(String id);
 
-    public Note addNote(Note note);
+    public void addNote(Note note);
 
     public void deleteNote(String id);
 

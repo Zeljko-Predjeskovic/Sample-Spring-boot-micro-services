@@ -3,6 +3,8 @@ package spg.pre.microservices.calendar.fileAccess;
 import java.io.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FileStreamerImp implements FileStreamer{
 
@@ -43,6 +45,22 @@ public class FileStreamerImp implements FileStreamer{
             throw new RuntimeException("Reading failed! ",e);
         }
         throw new RuntimeException("Line could not be red!!");
+    }
+
+    @Override
+    public List<Note> fileReadAllLines() {
+        List<Note> notes = new ArrayList<Note>();
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line = null;
+            while ((line = br.readLine()) != null) {
+
+                String[] str = line.split(",");
+                    notes.add(new Note(str[0],str[1],str[2], LocalDate.parse(str[3],dateTimeFormatter)));
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("Reading failed! ",e);
+        }
+        return notes;
     }
 
     public boolean checkId(String idWanted, String idReading){
