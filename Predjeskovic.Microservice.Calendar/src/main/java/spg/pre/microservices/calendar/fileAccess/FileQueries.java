@@ -1,8 +1,5 @@
 package spg.pre.microservices.calendar.fileAccess;
 
-import spg.pre.microservices.calendar.fileAccess.Note;
-
-import java.util.HashMap;
 import java.util.List;
 
 public interface FileQueries {

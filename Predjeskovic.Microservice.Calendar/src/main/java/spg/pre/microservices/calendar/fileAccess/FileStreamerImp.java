@@ -63,6 +63,11 @@ public class FileStreamerImp implements FileStreamer{
         return notes;
     }
 
+    @Override
+    public void deleteLine(String id) {
+
+    }
+
     public boolean checkId(String idWanted, String idReading){
         if(idWanted.equals(idReading))
             return true;

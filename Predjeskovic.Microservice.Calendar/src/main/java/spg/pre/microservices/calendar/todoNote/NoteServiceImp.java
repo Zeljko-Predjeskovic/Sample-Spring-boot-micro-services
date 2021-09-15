@@ -25,8 +25,8 @@ public class NoteServiceImp implements NoteService {
 
 
     @Override
-    public NoteDto addNote(NoteDto noteDto) {
-        return null;
+    public void addNote(NoteDto noteDto) {
+        fileQueries.addNote(noteDto.toNote());
     }
 
     @Override

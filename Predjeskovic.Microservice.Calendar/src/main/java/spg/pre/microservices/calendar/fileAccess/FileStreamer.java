@@ -12,4 +12,6 @@ public interface FileStreamer{
     Note fileReadOneLine(String id);
 
     List<Note> fileReadAllLines();
+
+    void deleteLine(String id);
 }

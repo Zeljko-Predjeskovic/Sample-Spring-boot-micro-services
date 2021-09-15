@@ -9,12 +9,12 @@ import java.util.List;
 
 public class FileQueriesImpl implements FileQueries {
 
-    private final FileStreamerImp fileStreamer = new FileStreamerImp(new File(System.getProperty("appFile")));
+    private final FileStreamerImp fileStreamer = new FileStreamerImp(new File(System.getProperty("testingFile")));
 
 
     @Override
     public List<Note> findAllNotes() {
-        return null;
+        return fileStreamer.fileReadAllLines();
     }
 
     @Override

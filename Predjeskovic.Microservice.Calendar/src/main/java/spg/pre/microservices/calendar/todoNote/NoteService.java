@@ -9,7 +9,7 @@ public interface NoteService {
 
     Optional<NoteDto> getNoteFromId(String id);
 
-    abstract NoteDto addNote(NoteDto noteDto);
+    abstract void addNote(NoteDto noteDto);
 
     abstract NoteDto deleteNode(String id);
 }
