@@ -1,15 +1,37 @@
-package spg.pre.microservices.calendar.todoNote;
+package spg.pre.microservices.calendar.fileAccess;
 
 import java.time.LocalDate;
 import java.util.Objects;
 
 public class Note {
 
+    private String id;
+
     private String title;
 
     private String description;
 
     private LocalDate calendarDate;
+
+    public Note(String id, String title, String description, LocalDate calendarDate){
+
+        this.id = id;
+
+        this.title=title;
+
+        this.description=description;
+
+        this.calendarDate=calendarDate;
+
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    protected void setId(String id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -23,7 +45,7 @@ public class Note {
         return description;
     }
 
-    public void setDescription(String description) {
+    protected void setDescription(String description) {
         this.description = description;
     }
 
@@ -31,7 +53,7 @@ public class Note {
         return calendarDate;
     }
 
-    public void setCalendarDate(LocalDate calendarDate) {
+    protected void setCalendarDate(LocalDate calendarDate) {
         this.calendarDate = calendarDate;
     }
 
@@ -45,13 +67,14 @@ public class Note {
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, description);
+        return Objects.hash(id, title, description, calendarDate);
     }
 
     @Override
     public String toString() {
         return "Note{" +
-                "title='" + title + '\'' +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", calendarDate=" + calendarDate +
                 '}';

@@ -1,8 +1,15 @@
 package spg.pre.microservices.calendar.todoNote;
 
-public class NoteService {
+import java.util.List;
+import java.util.Optional;
 
-    private final NoteRepository noteRepository = new NoteRepository();
+public interface NoteService {
 
+    List<NoteDto> getAllNotes();
 
+    Optional<NoteDto> getNoteFromId(String id);
+
+    abstract NoteDto addNote(NoteDto noteDto);
+
+    abstract NoteDto deleteNode(String id);
 }

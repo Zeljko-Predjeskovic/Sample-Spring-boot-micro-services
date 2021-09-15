@@ -11,4 +11,4 @@ pipelines:
             - cd ./Predjeskovic.Microservice.Calendar
             - mvn clean
             - mvn compile
-            - mvn test
+            - mvn -DtestingFile="src/main/resources/Notes.txt" test
