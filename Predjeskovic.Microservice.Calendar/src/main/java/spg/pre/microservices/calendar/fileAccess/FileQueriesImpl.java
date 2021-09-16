@@ -1,15 +1,11 @@
 package spg.pre.microservices.calendar.fileAccess;
 
-import spg.pre.microservices.calendar.fileAccess.FileQueries;
-import spg.pre.microservices.calendar.fileAccess.FileStreamerImp;
-import spg.pre.microservices.calendar.fileAccess.Note;
-
 import java.io.File;
 import java.util.List;
 
 public class FileQueriesImpl implements FileQueries {
 
-    private final FileStreamerImp fileStreamer = new FileStreamerImp(new File(System.getProperty("testingFile")));
+    private final FileStreamerImp fileStreamer = new FileStreamerImp(new File("Notes.txt"));
 
 
     @Override

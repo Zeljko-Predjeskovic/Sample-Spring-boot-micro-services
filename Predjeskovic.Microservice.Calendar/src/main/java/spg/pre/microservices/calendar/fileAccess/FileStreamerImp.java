@@ -8,7 +8,7 @@ import java.util.List;
 
 public class FileStreamerImp implements FileStreamer{
 
-    private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+    private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 
     private final File file;
 
@@ -19,11 +19,16 @@ public class FileStreamerImp implements FileStreamer{
 
     public void fileWriteline(Note note) {
         String line = ""+note.getId()+","+note.getTitle()+","+note.getDescription()+","
-                +note.getCalendarDate().format(dateTimeFormatter)+"\n";
+                +note.getCalendarDate().format(dateTimeFormatter);
 
-        try (PrintWriter out = new PrintWriter(new FileWriter(file))) {
-                out.print(line);
-            }
+
+        try(FileWriter fw = new FileWriter(file, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter out = new PrintWriter(bw))
+        {
+            out.println(line);
+            bw.close();
+        }
          catch (Exception e) {
             throw new RuntimeException("Writing failed! ",e);
         }
@@ -53,7 +58,8 @@ public class FileStreamerImp implements FileStreamer{
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line = null;
             while ((line = br.readLine()) != null) {
-
+                if(line.isEmpty())
+                    break;
                 String[] str = line.split(",");
                     notes.add(new Note(str[0],str[1],str[2], LocalDate.parse(str[3],dateTimeFormatter)));
             }

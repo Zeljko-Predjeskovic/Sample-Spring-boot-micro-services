@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class NoteServiceImpTest {
 
-    private NoteServiceImp noteServiceImp = new NoteServiceImp();
+   /* private NoteServiceImp noteServiceImp = new NoteServiceImp();
 
 
     @Test
@@ -13,6 +13,6 @@ public class NoteServiceImpTest {
         Assertions.assertTrue(noteServiceImp.getAllNotes()!=null);
     }
 
-
+*/
 
 }
