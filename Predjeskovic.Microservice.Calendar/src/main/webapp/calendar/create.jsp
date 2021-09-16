@@ -17,32 +17,40 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
-<div>
-    <div style="display: flex">
-        <div>
-            <h1>Datum</h1>
-            <form action="/Predjeskovic_Microservice_Calendar_war/create" method="post">
-                <h4>Date</h4>
-                <input name="date" id="datepicker" type="text">
+<div style="display: grid; justify-content: center;font-family: 'Calibri Light'">
+        <div style="margin: auto; grid-row: 1;">
+            <div style="margin: 1px;">
+                <form action="/Predjeskovic_Microservice_Calendar_war/create" method="post">
+                    <span>Datum</span>
+                    <input name="date" id="datepicker" placeholder="MM/dd/yyyy" type="text"><p><p/>
+                    <span>Title</span>
+                    <input name="title" placeholder="title example"><p></p>
+                    <span>Todo</span>
+                    <input name="description" placeholder="Todo example"><p></p>
 
-                <input name="title" placeholder="title example"><p/>
-
-                <input name="description" placeholder="Todo example"><p/>
-
-                <button type="submit">create note</button>
-            </form>
+                    <button type="submit">create note</button>
+                </form>
+            </div>
         </div>
-        <div>
-            <p>Notes</p>
-            <c:forEach items="${notes}" var="item">
-            <p>--------------Service--------------</p>
-                ${item.id()}<p>
-                ${item.description()}<p>
-                ${item.title()}<p>
-            </c:forEach>
+        <div style="margin: 10%; grid-row: 2; border:2px solid; border-radius: 10px ">
+            <h2>Notes</h2>
+            <div style="display: flex; flex-wrap:wrap;margin: 1px;">
+                <c:forEach items="${notes}" var="item">
+                <div style="margin: 1px">
+                    <table style="width:100%; border: 1px solid">
+                        <tr>
+                            <td style="border-bottom: 1px solid">${item.title()}</td>
+                            <td style="border-bottom: 1px solid">${item.calendarDate()}</td>
+                        </tr>
+                        <tr>
+                            <td style="overflow-x:auto;">${item.description()}</td>
+                        </tr>
+                    </table>
+
+                </div>
+                </c:forEach>
+            </div>
         </div>
-
-
     </div>
     <script>
     $( function() {
@@ -54,6 +62,5 @@
 
     $("#datepicker").datepicker();
     });</script>
-</div>
 </body>
 </html>

@@ -18,7 +18,7 @@ public class FileStreamerImp implements FileStreamer{
 
 
     public void fileWriteline(Note note) {
-        String line = ""+note.getId()+","+note.getTitle()+","+note.getDescription()+","
+        String line = "\n"+note.getId()+","+note.getTitle()+","+note.getDescription()+","
                 +note.getCalendarDate().format(dateTimeFormatter);
 
 
@@ -26,8 +26,7 @@ public class FileStreamerImp implements FileStreamer{
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter out = new PrintWriter(bw))
         {
-            out.println(line);
-            bw.close();
+            out.print(line);
         }
          catch (Exception e) {
             throw new RuntimeException("Writing failed! ",e);
