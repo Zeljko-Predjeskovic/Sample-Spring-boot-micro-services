@@ -12,3 +12,15 @@ pipelines:
             - mvn clean
             - mvn compile
             - mvn -DtestingFile="src/main/resources/Notes.txt" test
+      - step:
+          name: Build and Test MusicManager
+          caches:
+            - maven
+          script:
+            - echo hello music manager
+      - step:
+          name: Build and test SimpleChatService
+          caches:
+            - maven
+          script:
+            - echo hello chat service
