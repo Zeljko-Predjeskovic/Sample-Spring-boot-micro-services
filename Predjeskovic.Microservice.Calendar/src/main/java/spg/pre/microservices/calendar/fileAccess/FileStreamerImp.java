@@ -18,8 +18,8 @@ public class FileStreamerImp implements FileStreamer{
 
 
     public void fileWriteline(Note note) {
-        String line = "\n"+note.getId()+","+note.getTitle()+","+note.getDescription()+","
-                +note.getCalendarDate().format(dateTimeFormatter);
+        String line = note.getId()+","+note.getTitle()+","+note.getDescription()+","
+                +note.getCalendarDate().format(dateTimeFormatter)+"\n";
 
 
         try(FileWriter fw = new FileWriter(file, true);
@@ -69,9 +69,16 @@ public class FileStreamerImp implements FileStreamer{
     }
 
     @Override
-    public void deleteLine(String id) {
-
+    public void clearFile() {
+        try(PrintWriter writer = new PrintWriter(file)) {
+            writer.print("");
+            writer.close();
+                    }
+        catch (Exception e){
+            throw new RuntimeException("Failed clearing file!", e);
+        }
     }
+
 
     public boolean checkId(String idWanted, String idReading){
         if(idWanted.equals(idReading))

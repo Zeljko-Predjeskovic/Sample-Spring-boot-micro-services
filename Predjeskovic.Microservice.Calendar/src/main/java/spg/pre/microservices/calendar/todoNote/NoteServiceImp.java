@@ -30,7 +30,6 @@ public class NoteServiceImp implements NoteService {
     }
 
     @Override
-    public NoteDto deleteNode(String id) {
-        return null;
+    public void deleteNode(String id) {fileQueries.deleteNote(id);
     }
 }

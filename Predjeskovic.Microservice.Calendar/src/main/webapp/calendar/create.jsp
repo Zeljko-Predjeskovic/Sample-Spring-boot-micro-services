@@ -1,6 +1,11 @@
 <%@ page import="java.util.List" %>
 <%@ page import="spg.pre.microservices.calendar.todoNote.NoteServiceImp" %>
-<%@ page import="spg.pre.microservices.calendar.todoNote.NoteDto" %><%--
+<%@ page import="spg.pre.microservices.calendar.todoNote.NoteDto" %>
+<%@ page import="spg.pre.microservices.calendar.todoNote.NoteService" %>
+<%@ page import="spg.pre.microservices.calendar.fileAccess.Note" %>
+<%@ page import="java.util.UUID" %>
+<%@ page import="java.time.LocalDate" %>
+<%@ page import="java.time.format.DateTimeFormatter" %><%--
   Created by IntelliJ IDEA.
   User: Zeljko Predjeskovic
   Date: 14.09.2021
@@ -45,8 +50,10 @@
                         <tr>
                             <td style="overflow-x:auto;">${item.description()}</td>
                         </tr>
+                        <tr>
+                            <a href="/Predjeskovic_Microservice_Calendar_war/deleteNote/${item.id()}">delete</a>
+                        </tr>
                     </table>
-
                 </div>
                 </c:forEach>
             </div>
