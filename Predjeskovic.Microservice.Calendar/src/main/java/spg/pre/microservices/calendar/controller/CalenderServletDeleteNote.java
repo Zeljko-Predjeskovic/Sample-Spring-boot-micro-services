@@ -25,7 +25,7 @@ public class CalenderServletDeleteNote extends HttpServlet {
 
         noteServiceImp.deleteNode(id);
 
-        resp.sendRedirect("/Predjeskovic_Microservice_Calendar_war/create");
+        resp.sendRedirect("/Predjeskovic_Microservice_Calendar_1_0_SNAPSHOT_war/create");
 
 
 

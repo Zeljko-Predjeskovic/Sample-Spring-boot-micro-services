@@ -40,7 +40,7 @@ public class CalendarServletViewNote extends HttpServlet {
         System.out.println(noteDto);
         noteServiceImp.addNote(noteDto);
 
-        resp.sendRedirect("/Predjeskovic_Microservice_Calendar_war/create");
+        resp.sendRedirect("/Predjeskovic_Microservice_Calendar_1_0_SNAPSHOT_war/create");
     }
 
     protected boolean isExpired(LocalDate noteDate){

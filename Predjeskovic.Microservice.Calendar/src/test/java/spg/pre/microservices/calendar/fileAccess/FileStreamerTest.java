@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 public class FileStreamerTest {
 
-    private FileStreamerImp fileStreamer = new FileStreamerImp(new File(System.getProperty("testingFile")));
+  /*  private FileStreamerImp fileStreamer = new FileStreamerImp(new File(System.getProperty("testingFile")));
 
     @Test
     public void writeFileAndReadIt(){
@@ -19,5 +19,5 @@ public class FileStreamerTest {
 
     @Test void readAllLines(){
         Assertions.assertTrue(fileStreamer.fileReadAllLines()!=null);
-    }
+    }*/
 }

@@ -25,7 +25,7 @@
 <div style="display: grid; justify-content: center;font-family: 'Calibri Light'">
         <div style="margin: auto; grid-row: 1;">
             <div style="margin: 1px;">
-                <form action="/Predjeskovic_Microservice_Calendar_war/create" method="post">
+                <form action="/Predjeskovic_Microservice_Calendar_1_0_SNAPSHOT_war/create" method="post">
                     <span>Datum</span>
                     <input name="date" id="datepicker" placeholder="MM/dd/yyyy" type="text"><p><p/>
                     <span>Title</span>
@@ -51,7 +51,7 @@
                             <td style="overflow-x:auto;">${item.description()}</td>
                         </tr>
                         <tr>
-                            <a href="/Predjeskovic_Microservice_Calendar_war/deleteNote/${item.id()}">delete</a>
+                            <a href="/Predjeskovic_Microservice_Calendar_1_0_SNAPSHOT_war/deleteNote/${item.id()}">delete</a>
                         </tr>
                     </table>
                 </div>
