@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Predjeskovic_Microservice.iml" filepath="$PROJECT_DIR$/.idea/Predjeskovic_Microservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Predjeskovic_Microservice_Calendar/Predjeskovic_Microservice_Calendar.iml" filepath="$PROJECT_DIR$/Predjeskovic_Microservice_Calendar/Predjeskovic_Microservice_Calendar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Predjeskovic_Microservice_MusicManager/Predjeskovic_Microservice_MusicManager.iml" filepath="$PROJECT_DIR$/Predjeskovic_Microservice_MusicManager/Predjeskovic_Microservice_MusicManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Prejdeskovic.Microservice.MusicManager/Prejdeskovic.Microservice.MusicManager.iml" filepath="$PROJECT_DIR$/Prejdeskovic.Microservice.MusicManager/Prejdeskovic.Microservice.MusicManager.iml" />
     </modules>
   </component>
 </project>

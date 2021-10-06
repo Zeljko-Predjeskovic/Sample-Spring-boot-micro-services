@@ -17,7 +17,10 @@ pipelines:
           caches:
             - maven
           script:
-            - echo hello music manager
+              - cd ./Predjeskovic.Microservice.MusicManager
+              - mvn clean
+              - mvn compile
+              - mvn test
       - step:
           name: Build and test SimpleChatService
           caches:
