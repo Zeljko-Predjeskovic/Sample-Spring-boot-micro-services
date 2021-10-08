@@ -8,7 +8,7 @@ pipelines:
           caches:
             - maven
           script:
-            - cd ./Predjeskovic.Microservice.Calendar
+            - cd ./Predjeskovic_Microservice_Calendar
             - mvn clean
             - mvn compile
             - mvn -DtestingFile="src/main/resources/Notes.txt" test
@@ -20,7 +20,7 @@ pipelines:
           caches:
             - maven
           script:
-              - cd ./Predjeskovic.Microservice.MusicManager
+              - cd ./Predjeskovic_Microservice_MusicManager
               - mvn clean
               - mvn compile
               - mvn test
