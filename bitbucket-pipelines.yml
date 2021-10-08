@@ -12,6 +12,9 @@ pipelines:
             - mvn clean
             - mvn compile
             - mvn -DtestingFile="src/main/resources/Notes.txt" test
+            - mvn -B verify --file pom.xml
+          after-script:
+            - pipe: atlassian/checkstyle-report:0.2.0
       - step:
           name: Build and Test MusicManager
           caches:
@@ -21,9 +24,18 @@ pipelines:
               - mvn clean
               - mvn compile
               - mvn test
+              - mvn -B verify --file pom.xml
+          after-script:
+            - pipe: atlassian/checkstyle-report:0.2.0
       - step:
           name: Build and test SimpleChatService
           caches:
             - maven
           script:
             - echo hello chat service
+      - step:
+          name: Security Scan
+          script:
+            # Run a security scan for sensitive data.
+            # See more security tools at https://bitbucket.org/product/features/pipelines/integrations?&category=security
+            - pipe: atlassian/git-secrets-scan:0.4.3
