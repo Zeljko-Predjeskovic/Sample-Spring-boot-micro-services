@@ -1,8 +1,8 @@
 package spg.pre.microservices.calendar.controller;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.google.gson.*;
 import spg.pre.microservices.calendar.configs.LocalDateAdapter;
+import spg.pre.microservices.calendar.fileAccess.Note;
 import spg.pre.microservices.calendar.todoNote.NoteDto;
 import spg.pre.microservices.calendar.todoNote.NoteServiceImp;
 
@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 import java.util.UUID;
 
 @WebServlet(urlPatterns = "/calendar/*")
@@ -34,6 +35,16 @@ public class CalenderServletRest extends HttpServlet
         }
     }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        switch (getRequestType(req)){
+            case "insert" : insertNote(req,resp);
+                break;
+            case "delete" : deleteNote(req, resp);
+                break;
+        }
+    }
+
 
     protected void getAllNotes(HttpServletResponse resp) throws IOException {
         PrintWriter out = resp.getWriter();
@@ -43,12 +54,24 @@ public class CalenderServletRest extends HttpServlet
         out.flush();
     }
 
-    protected void deleteNote(){
+    protected void insertNote(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        NoteDto noteDto = new NoteDto(UUID.randomUUID().toString(),
+                req.getParameter("title"),
+                req.getParameter("description"),
+                LocalDate.parse(req.getParameter("date"),DateTimeFormatter.ofPattern("MM/dd/yyyy")));
+
+            noteServiceImp.addNote(noteDto);
+            resp.setStatus(201);
+            resp.addHeader("Insert Status","Inserted" + noteDto.id());
+
 
     }
 
-    protected void insertNote(){
-
+    protected void deleteNote(HttpServletRequest req, HttpServletResponse resp){
+        String id = req.getParameter("ID");
+        noteServiceImp.deleteNode(id);
+        resp.setStatus(201);
+        resp.addHeader("Insert Status","Deleted " + id);
     }
 
     protected String getRequestType(HttpServletRequest req){

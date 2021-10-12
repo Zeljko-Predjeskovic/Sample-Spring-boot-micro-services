@@ -6,9 +6,9 @@ RUN wget https://mirror.klaus-uwe.me/apache/tomcat/tomcat-9/v9.0.54/bin/apache-t
 RUN tar -xzvf apache-tomcat-9.0.54.tar.gz
 RUN find apache-tomcat-9.0.54
 
-EXPOSE 8080
+EXPOSE 8081
 
-ADD ./target/Predjeskovic.Microservice.Calendar-1.0-SNAPSHOT.war ./apache-tomcat-9.0.54/webapps
+ADD ./target/Predjeskovic_Microservice_Calendar-1.0-SNAPSHOT.war ./apache-tomcat-9.0.54/webapps
 
 
 CMD ["./apache-tomcat-9.0.54/bin/catalina.sh", "run"]

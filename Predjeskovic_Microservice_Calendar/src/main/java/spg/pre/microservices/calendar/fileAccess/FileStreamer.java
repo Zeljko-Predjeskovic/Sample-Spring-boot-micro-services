@@ -5,8 +5,6 @@ import java.util.List;
 
 public interface FileStreamer{
 
-
-
     void fileWriteline(Note note);
 
     Note fileReadOneLine(String id);
