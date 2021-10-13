@@ -4,35 +4,16 @@ pipelines:
   default:
     - parallel:
       - step:
-          name: Build and Test Calendar
+          name: Build and Test Giraffobot
           caches:
             - maven
           script:
-            - cd ./Predjeskovic_Microservice_Calendar
             - mvn clean
             - mvn compile
             - mvn -DtestingFile="src/main/resources/Notes.txt" test
             - mvn -B verify --file pom.xml
           after-script:
             - pipe: atlassian/checkstyle-report:0.2.0
-      - step:
-          name: Build and Test MusicManager
-          caches:
-            - maven
-          script:
-              - cd ./Predjeskovic_Microservice_MusicManager
-              - mvn clean
-              - mvn compile
-              - mvn test
-              - mvn -B verify --file pom.xml
-          after-script:
-            - pipe: atlassian/checkstyle-report:0.2.0
-      - step:
-          name: Build and test SimpleChatService
-          caches:
-            - maven
-          script:
-            - echo hello chat service
       - step:
           name: Security Scan
           script:

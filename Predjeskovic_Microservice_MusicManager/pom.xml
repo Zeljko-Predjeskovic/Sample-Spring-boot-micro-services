@@ -8,7 +8,7 @@
         <version>2.5.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>spg.pre.microservices</groupId>
+    <groupId>spg.pre.microservices.music.manager</groupId>
     <artifactId>Predjeskovic_Microservice_MusicManager</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Predjeskovic_Microservice_MusicManager</name>
