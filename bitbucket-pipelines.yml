@@ -8,9 +8,6 @@ pipelines:
           caches:
             - maven
           script:
-            - mvn clean
-            - mvn compile
-            #g- mvn -DtestingFile="src/main/resources/Notes.txt" test
             - mvn -B verify --file pom.xml
           after-script:
             - pipe: atlassian/checkstyle-report:0.2.0
