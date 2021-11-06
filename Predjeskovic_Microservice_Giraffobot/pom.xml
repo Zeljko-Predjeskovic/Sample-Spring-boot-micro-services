@@ -8,10 +8,11 @@
         <version>2.5.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>spg.pre.microservices.music.manager</groupId>
-    <artifactId>Predjeskovic_Microservice_MusicManager</artifactId>
+    <groupId>spg.pre.microservices.giraffobot</groupId>
+    <artifactId>Predjeskovic_Microservice_Giraffobot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Predjeskovic_Microservice_MusicManager</name>
+    <name>Predjeskovic_Microservice_Giraffobot</name>
+    <description>Predjeskovic_Microservice_Giraffobot</description>
     <properties>
         <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>

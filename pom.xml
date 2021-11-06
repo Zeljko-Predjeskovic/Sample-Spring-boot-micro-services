@@ -18,6 +18,7 @@
     <modules>
         <module>Predjeskovic_Microservice_Calendar</module>
         <module>Predjeskovic_Microservice_MusicManager</module>
+        <module>Predjeskovic_Microservice_Giraffobot</module>
     </modules>
 
 </project>
