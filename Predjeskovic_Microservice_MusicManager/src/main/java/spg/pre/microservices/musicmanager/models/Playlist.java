@@ -1,9 +1,10 @@
-package spg.pre.microservices.musicmanager.documents;
+package spg.pre.microservices.musicmanager.models;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import spg.pre.microservices.musicmanager.documents.Music;
 
 import java.util.List;
 

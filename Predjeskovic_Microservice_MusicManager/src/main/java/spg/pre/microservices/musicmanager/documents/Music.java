@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
+import spg.pre.microservices.musicmanager.models.Persistable;
 
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -13,7 +14,7 @@ import java.util.HashMap;
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @Getter
 @Setter
-public class Music extends Persistable{
+public class Music extends Persistable {
 
     public String musicTitle;
     public Artist artist;

@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
+import spg.pre.microservices.musicmanager.models.Persistable;
+import spg.pre.microservices.musicmanager.models.Playlist;
 
 import java.util.List;
 
@@ -12,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @Getter
 @Setter
-public class User extends Persistable{
+public class User extends Persistable {
 
     public String firstname;
     public String lastname;

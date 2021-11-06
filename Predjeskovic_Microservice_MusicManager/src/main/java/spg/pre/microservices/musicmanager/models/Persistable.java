@@ -1,4 +1,4 @@
-package spg.pre.microservices.musicmanager.documents;
+package spg.pre.microservices.musicmanager.models;
 
 import lombok.AccessLevel;
 import lombok.Getter;
