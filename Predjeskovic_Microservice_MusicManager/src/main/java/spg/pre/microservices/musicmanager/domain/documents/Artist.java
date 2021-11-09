@@ -1,11 +1,11 @@
-package spg.pre.microservices.musicmanager.documents;
+package spg.pre.microservices.musicmanager.domain.documents;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
-import spg.pre.microservices.musicmanager.models.Persistable;
+import spg.pre.microservices.musicmanager.domain.models.Persistable;
 
 import java.util.List;
 
