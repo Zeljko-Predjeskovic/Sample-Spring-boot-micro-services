@@ -1,9 +1,6 @@
 package spg.pre.microservices.musicmanager.domain.documents;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 import spg.pre.microservices.musicmanager.domain.models.Persistable;
 
@@ -11,7 +8,6 @@ import java.time.LocalDate;
 import java.util.HashMap;
 
 @Document
-@AllArgsConstructor(access = AccessLevel.PUBLIC)
 @Getter
 @Setter
 public class Music extends Persistable {
@@ -20,6 +16,23 @@ public class Music extends Persistable {
     public Artist artist;
     public String trackUrl;
     public LocalDate createdOn;
-    public HashMap<LocalDate,Long> weeklyClickedOn;
+    public HashMap<LocalDate,Integer> weeklyClickedOn;
 
+    @Builder
+    public Music(String musicTitle, Artist artist, String trackUrl, LocalDate createdOn) {
+        this.musicTitle = musicTitle;
+        this.artist = artist;
+        this.trackUrl = trackUrl;
+        this.createdOn = createdOn;
+    }
+
+    public void addClick(int clicks){
+        if(weeklyClickedOn == null)
+        {
+            weeklyClickedOn = new HashMap<LocalDate,Integer>();
+        }
+        else {
+            weeklyClickedOn.put(LocalDate.now(),clicks);
+        }
+    }
 }

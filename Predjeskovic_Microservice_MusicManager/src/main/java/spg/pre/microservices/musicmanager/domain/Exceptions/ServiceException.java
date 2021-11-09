@@ -1,6 +1,6 @@
 package spg.pre.microservices.musicmanager.domain.Exceptions;
 
-public class ServiceException extends Exception{
+public class ServiceException extends RuntimeException{
 
     public ServiceException(){
         super();

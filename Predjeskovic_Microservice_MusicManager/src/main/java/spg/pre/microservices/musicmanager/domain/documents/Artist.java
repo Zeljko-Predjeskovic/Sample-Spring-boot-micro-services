@@ -1,16 +1,13 @@
 package spg.pre.microservices.musicmanager.domain.documents;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 import spg.pre.microservices.musicmanager.domain.models.Persistable;
 
 import java.util.List;
 
 @Document
-@AllArgsConstructor(access = AccessLevel.PUBLIC)
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
 @Getter
 @Setter
 public class Artist extends Persistable {
@@ -19,4 +16,7 @@ public class Artist extends Persistable {
 
     public List<Music> producedSongs;
 
+    public Artist(String artistName) {
+        this.artistName = artistName;
+    }
 }
