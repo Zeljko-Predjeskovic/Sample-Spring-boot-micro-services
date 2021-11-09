@@ -4,7 +4,6 @@ import spg.pre.microservices.musicmanager.domain.documents.Artist;
 import spg.pre.microservices.musicmanager.domain.documents.Music;
 
 import java.time.LocalDate;
-import java.util.Optional;
 
 public record MusicDto(Long id, String musicTitle, String artistName, LocalDate createdOn) {
 

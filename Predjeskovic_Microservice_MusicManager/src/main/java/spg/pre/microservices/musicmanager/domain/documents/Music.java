@@ -1,13 +1,11 @@
 package spg.pre.microservices.musicmanager.domain.documents;
 
 import lombok.*;
-import org.springframework.data.mongodb.core.mapping.Document;
 import spg.pre.microservices.musicmanager.domain.models.Persistable;
 
 import java.time.LocalDate;
 import java.util.HashMap;
 
-@Document
 @Getter
 @Setter
 public class Music extends Persistable {

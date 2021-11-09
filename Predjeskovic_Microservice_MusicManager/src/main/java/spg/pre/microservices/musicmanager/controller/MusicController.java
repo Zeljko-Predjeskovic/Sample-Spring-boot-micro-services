@@ -4,14 +4,12 @@ package spg.pre.microservices.musicmanager.controller;
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import spg.pre.microservices.musicmanager.domain.Exceptions.ServiceException;
 import spg.pre.microservices.musicmanager.services.MusicDto;
 import spg.pre.microservices.musicmanager.services.MusicService;
 
 import java.util.List;
 
-@RestController
-@RequestMapping(MusicController.MUSIC_ROUTE)
+@RestController @RequestMapping(MusicController.MUSIC_ROUTE)
 public class MusicController {
 
     public static final String MUSIC_ROUTE = "/music";
