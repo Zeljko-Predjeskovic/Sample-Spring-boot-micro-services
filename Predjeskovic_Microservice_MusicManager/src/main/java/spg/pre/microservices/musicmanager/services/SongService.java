@@ -1,10 +1,9 @@
 package spg.pre.microservices.musicmanager.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import spg.pre.microservices.musicmanager.domain.Exceptions.ServiceException;
-import spg.pre.microservices.musicmanager.persistence.MusicRepository;
+import spg.pre.microservices.musicmanager.persistence.SongRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,32 +11,32 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 @Service @Transactional(rollbackFor = ServiceException.class)
-public class MusicService {
+public class SongService {
 
-    private final MusicRepository musicRepository;
+    private final SongRepository musicRepository;
 
-    public MusicService(MusicRepository musicRepository) {
+    public SongService(SongRepository musicRepository) {
         this.musicRepository = musicRepository;
     }
 
-    public List<MusicDto> getAllSongs(){
+    public List<SongDto> getAllSongs(){
         return StreamSupport.stream(musicRepository.findAll().spliterator(),false)
-                .map(MusicDto::fromMusic)
+                .map(SongDto::fromMusic)
                 .collect(Collectors.toList());
     }
 
-    public MusicDto getOneSong(Long id){
+    public SongDto getOneSong(Long id){
         return musicRepository.findById(id)
-                .map(MusicDto::fromMusic)
+                .map(SongDto::fromMusic)
                 .orElseThrow(()->
                         new ServiceException("Music can not be found"));
     }
 
-    public MusicDto addMusic(MusicDto musicDto){
+    public SongDto addMusic(SongDto musicDto){
         var music = Optional.ofNullable(musicDto)
-                .map(MusicDto :: toMusic)
+                .map(SongDto:: toMusic)
                 .map(musicRepository::insert)
-                .map(MusicDto :: fromMusic)
+                .map(SongDto:: fromMusic)
                 .orElseThrow(()->
                         new ServiceException("Music can not be added"));
 

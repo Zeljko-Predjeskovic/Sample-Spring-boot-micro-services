@@ -1,18 +1,23 @@
 package spg.pre.microservices.musicmanager.domain.models;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import spg.pre.microservices.musicmanager.domain.documents.Music;
+import lombok.*;
+import spg.pre.microservices.musicmanager.domain.documents.Song;
 
 import java.util.List;
 
-@AllArgsConstructor(access = AccessLevel.PUBLIC)
-@Getter
-@Setter
+@Builder
+@Getter @Setter
 public class Playlist {
 
     public String playlistName;
-    public List<Music> Songs;
+    public List<Song> Songs;
+
+    public Playlist(String playlistName) {
+        this.playlistName = playlistName;
+    }
+
+    public Playlist(String playlistName, List<Song> songs) {
+        this.playlistName = playlistName;
+        Songs = songs;
+    }
 }

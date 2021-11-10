@@ -3,16 +3,18 @@ package spg.pre.microservices.musicmanager.domain.models;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Objects;
 
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Getter
+@Document(collection = "database_sequences")
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class Persistable {
 
-    @Id
-    public Long id;
+    @Id @Getter
+    public String id;
 
     @Override
     public boolean equals(Object o) {
