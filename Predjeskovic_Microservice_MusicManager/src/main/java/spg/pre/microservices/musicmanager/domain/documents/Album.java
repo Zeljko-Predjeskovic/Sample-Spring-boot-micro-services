@@ -12,11 +12,11 @@ import java.util.List;
 @Setter @Getter
 public class Album extends Persistable {
 
-    public String albumName;
+    private String albumName;
 
-    public List<Song> songs;
+    private List<Song> songs;
 
-    public Album(String albumName) {
+    private Album(String albumName) {
         this.albumName = albumName;
     }
 

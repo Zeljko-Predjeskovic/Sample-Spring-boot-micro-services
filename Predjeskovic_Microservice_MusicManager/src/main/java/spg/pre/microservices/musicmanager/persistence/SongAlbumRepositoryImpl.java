@@ -13,11 +13,6 @@ public class SongAlbumRepositoryImpl implements SongAlbumRepository{
     @Autowired
     private MongoTemplate mongoTemplate;
 
-    public void deleteAllCollections(){
-        mongoTemplate.dropCollection("song");
-        mongoTemplate.dropCollection("album");
-    };
-
     @Override
     public void createAlbumWithSongs(String albumName, List<Song> songs ) {
         mongoTemplate.insert(new Album(albumName, songs));

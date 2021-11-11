@@ -9,7 +9,7 @@ public record SongDto(String id, String musicTitle, String artistName, LocalDate
 
     public static SongDto fromMusic(Song music){
         return new SongDto(music.getId(), music.getMusicTitle(), music.getArtist().getArtistName(),
-                music.createdOn);
+                music.getCreatedOn());
     }
 
     public Song toMusic(){

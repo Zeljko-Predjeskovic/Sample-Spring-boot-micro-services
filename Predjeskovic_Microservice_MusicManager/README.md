@@ -1,19 +1,19 @@
-## Music Manager 
+# Music Manager 
 
 
 
-### MongoDb Model
+## MongoDb Model
 
 ![](../images/DBMusicManagerModel.PNG)
 
-### Insertions
+## Insertions
 
 In my Application class I generate Songs and also obe Album with all these Songs.
 
 ![](../images/Inserts.PNG)
 
 
-### Results
+## Results
 
 ![](../images/Collections.PNG)
 
@@ -21,9 +21,9 @@ In my Application class I generate Songs and also obe Album with all these Songs
 
 ![](../images/Album.PNG)
 
-### Spring Mongorepository
+## Spring Mongorepository
 
-### Mongorepository with MongoTemplate
+## Mongorepository with MongoTemplate
 
 screenshots von ordner struktur
 
@@ -31,7 +31,7 @@ Queries
 
     code
 
-### Tests
+## Tests
 
 screenshot und code von tests
 

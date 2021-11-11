@@ -25,7 +25,7 @@ public class SongService {
                 .collect(Collectors.toList());
     }
 
-    public SongDto getOneSong(Long id){
+    public SongDto getOneSong(String id){
         return musicRepository.findById(id)
                 .map(SongDto::fromMusic)
                 .orElseThrow(()->
@@ -43,7 +43,7 @@ public class SongService {
         return music;
     }
 
-    public void deleteMusic(Long id) throws ServiceException {
+    public void deleteMusic(String id) throws ServiceException {
         var song = getOneSong(id);
         musicRepository.deleteById(id);
     }

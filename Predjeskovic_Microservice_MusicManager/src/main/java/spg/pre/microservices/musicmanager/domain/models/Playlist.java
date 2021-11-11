@@ -9,8 +9,8 @@ import java.util.List;
 @Getter @Setter
 public class Playlist {
 
-    public String playlistName;
-    public List<Song> Songs;
+    private String playlistName;
+    private List<Song> Songs;
 
     public Playlist(String playlistName) {
         this.playlistName = playlistName;
