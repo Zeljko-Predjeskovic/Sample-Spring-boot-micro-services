@@ -12,11 +12,11 @@ import java.time.LocalDate;
 @Getter @Setter
 public class Song extends Persistable {
 
-    public String musicTitle;
-    public Artist artist;
-    public String trackUrl;
-    public String genre;
-    public LocalDate createdOn;
+    private String musicTitle;
+    private Artist artist;
+    private String trackUrl;
+    private String genre;
+    private LocalDate createdOn;
 
     public Song(String musicTitle, Artist artist, String trackUrl, String genre, LocalDate createdOn) {
         this.musicTitle = musicTitle;

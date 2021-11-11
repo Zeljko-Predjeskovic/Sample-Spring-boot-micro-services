@@ -27,7 +27,7 @@ public class SongController {
     }
 
     @GetMapping(path = "/{id}")
-    public SongDto getOneSongById(@PathVariable @NonNull Long id){
+    public SongDto getOneSongById(@PathVariable @NonNull String id){
         return musicService.getOneSong(id);
     }
 
@@ -37,7 +37,7 @@ public class SongController {
     }
 
     @DeleteMapping({"/{id}"})
-    public void deleteMusic(@PathVariable Long id){
+    public void deleteMusic(@PathVariable String id){
         musicService.deleteMusic(id);
     }
 

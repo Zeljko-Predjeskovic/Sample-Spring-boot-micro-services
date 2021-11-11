@@ -6,7 +6,7 @@ import lombok.*;
 @Getter @Setter
 public class Artist extends Persistable {
 
-    public String artistName;
+    private String artistName;
 
     public Artist(String artistName) {
         this.artistName = artistName;

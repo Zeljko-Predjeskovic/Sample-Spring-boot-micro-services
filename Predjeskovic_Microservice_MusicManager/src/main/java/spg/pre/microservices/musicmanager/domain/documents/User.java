@@ -15,9 +15,9 @@ import java.util.List;
 @Getter @Setter
 public class User extends Persistable {
 
-    public String firstname;
-    public String lastname;
-    public List<Playlist> playlists;
+    private String firstname;
+    private String lastname;
+    private List<Playlist> playlists;
 
 
     public User(String firstname, String lastname){

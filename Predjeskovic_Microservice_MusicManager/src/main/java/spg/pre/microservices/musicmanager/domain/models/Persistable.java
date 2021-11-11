@@ -14,7 +14,7 @@ import java.util.Objects;
 public class Persistable {
 
     @Id @Getter
-    public String id;
+    private String id;
 
     @Override
     public boolean equals(Object o) {
