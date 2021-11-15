@@ -1,9 +1,8 @@
-package spg.pre.microservices.musicmanager.domain.models;
+package spg.pre.microservices.musicmanager.domain.documents;
 
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 

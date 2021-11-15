@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import spg.pre.microservices.musicmanager.domain.documents.Song;
 
 @Repository
-public interface SongRepository extends MongoRepository<Song,String>{
+public interface SongRepository extends MongoRepository<Song,String>, CustomSongRepository {
 
     Song findByMusicTitle(String musicTitle);
 

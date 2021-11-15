@@ -4,7 +4,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
-import spg.pre.microservices.musicmanager.domain.models.Persistable;
 import spg.pre.microservices.musicmanager.domain.models.Playlist;
 
 import java.util.ArrayList;
