@@ -9,7 +9,6 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import spg.pre.microservices.musicmanager.domain.documents.Song;
 import spg.pre.microservices.musicmanager.domain.models.Artist;
 
-import java.lang.reflect.Executable;
 import java.time.LocalDate;
 import java.util.NoSuchElementException;
 
@@ -21,15 +20,17 @@ public class SongRepositoryTest {
     @Autowired
     private SongRepository songRepository;
 
-    private Song song;
     @Autowired
     private MongoTemplate mongoTemplate;
 
-    Faker faker = new Faker();
+    private Song song;
 
-    @BeforeEach
-    public void beforeEach(){
+    private Faker faker = new Faker();
+
+    @BeforeAll
+    public void beforeAll(){
         mongoTemplate.dropCollection("song");
+        mongoTemplate.dropCollection("album");
     }
 
     @Test @Order(1)
@@ -46,15 +47,22 @@ public class SongRepositoryTest {
     }
 
     @Test @Order(3)
+    public void assertPartialUpdateSong(){
+        songRepository.partialUpdate(song.getId(),"genre","Rock");
+    }
+
+    @Test @Order(4)
     public void assertDeleteSong(){
         songRepository.delete(song);
     }
 
 
-    @Test @Order(4)
+    @Test @Order(5)
     public void assertFalseGetSong(){
         Assertions.assertThrows(NoSuchElementException.class, () -> {songRepository.findById(song.getId()).get();});
     }
+
+
 
 
 

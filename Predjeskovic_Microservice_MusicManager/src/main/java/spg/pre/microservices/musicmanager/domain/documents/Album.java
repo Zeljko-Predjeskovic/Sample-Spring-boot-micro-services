@@ -2,7 +2,6 @@ package spg.pre.microservices.musicmanager.domain.documents;
 
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
-import spg.pre.microservices.musicmanager.domain.models.Persistable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +15,7 @@ public class Album extends Persistable {
 
     private List<Song> songs;
 
-    private Album(String albumName) {
+    public Album(String albumName) {
         this.albumName = albumName;
     }
 

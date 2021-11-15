@@ -26,7 +26,7 @@ public class PredjeskovicMicroserviceMusicManagerApplication {
         SpringApplication.run(PredjeskovicMicroserviceMusicManagerApplication.class, args);
 
     }
-
+/*
     @Bean
     CommandLineRunner runner(SongRepository songRepository, MongoTemplate mongoTemplate){
 
@@ -45,11 +45,9 @@ public class PredjeskovicMicroserviceMusicManagerApplication {
           }
 
           songRepository.insert(songs);
-
-
-          mongoTemplate.insert(new Album(faker.name().title(), songs));
+          songRepository.createAlbumWithSongs(faker.name().title(), songs);
       };
 
     }
-
+*/
 }

@@ -1,6 +1,7 @@
 package spg.pre.microservices.musicmanager.domain.models;
 
 import lombok.*;
+import spg.pre.microservices.musicmanager.domain.documents.Persistable;
 
 @Builder
 @Getter @Setter
