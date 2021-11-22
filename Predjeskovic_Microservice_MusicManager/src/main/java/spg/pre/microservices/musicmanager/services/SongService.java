@@ -43,6 +43,10 @@ public class SongService {
         return music;
     }
 
+    public void partialUpdate(String id, String fieldName, String fieldValue){
+        musicRepository.partialUpdate(id,fieldName,fieldValue);
+    }
+
     public void deleteMusic(String id) throws ServiceException {
         var song = getOneSong(id);
         musicRepository.deleteById(id);

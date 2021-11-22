@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 
 @SpringBootApplication
 @EnableMongoRepositories
-//@EnableEurekaClient
+@EnableEurekaClient
 public class PredjeskovicMicroserviceMusicManagerApplication {
 
     public static void main(String[] args) {
