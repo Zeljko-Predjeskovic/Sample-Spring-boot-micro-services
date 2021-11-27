@@ -36,6 +36,11 @@ public class SongController {
         return musicService.addMusic(musicDto);
     }
 
+    @PutMapping("/{id}/{fieldName}/{fieldValue}")
+    public void updateSongField(@PathVariable String id, @PathVariable String fieldName, @PathVariable String fieldValue){
+        musicService.partialUpdate(id,fieldName,fieldValue);
+    }
+
     @DeleteMapping({"/{id}"})
     public void deleteMusic(@PathVariable String id){
         musicService.deleteMusic(id);
