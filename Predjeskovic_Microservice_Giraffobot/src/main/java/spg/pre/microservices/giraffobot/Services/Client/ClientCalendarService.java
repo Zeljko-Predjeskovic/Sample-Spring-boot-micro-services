@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 @Service
-@FeignClient(value = "MusicManager", url = "localhost:8082")
-public interface ClientSongService {
+@FeignClient(value = "Calendar", url = "localhost:8081/Predjeskovic_Microservice_Calendar_1_0_SNAPSHOT_war")
+public interface ClientCalendarService {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/music")
-    List<SongDto> getAllSongs();
+
+    @RequestMapping(method = RequestMethod.GET, value = "/calendar/getAll")
+    List<NoteDto> getAllNotes();
+
 
 }
