@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 @Service
-@FeignClient(value = "MusicManager", url = "localhost:8082")
+@FeignClient(name = "Giraffobot-MusicManager")
 public interface ClientSongService {
 
     @RequestMapping(method = RequestMethod.GET, value = "/music")
