@@ -21,6 +21,7 @@
         <module>Predjeskovic_Microservice_Giraffobot</module>
         <module>ConfigServer</module>
         <module>ServiceRegistry</module>
+        <module>TestContainers</module>
     </modules>
 
 </project>
