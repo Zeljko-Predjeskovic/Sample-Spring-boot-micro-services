@@ -30,7 +30,7 @@ public class NoteController {
 
 
     @GetMapping
-    public List<NoteDto> getAllSongs(){
+    public List<NoteDto> getAllNotes(){
         CircuitBreaker circuitBreaker = circuitBreakerFactory.create("circuitbreaker");
         return circuitBreaker.run(() -> clientCalendarService.getAllNotes());
     }

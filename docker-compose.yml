@@ -1,0 +1,48 @@
+version: "2"
+
+services:
+  config-server:
+    build: ./ConfigServer
+    ports:
+      - "8888:8888"
+
+  service-registry:
+    build: ./ServiceRegistry
+    ports:
+      - "8761:8761"
+
+  giraffobot:
+    build: ./Predjeskovic_Microservice_Giraffobot
+    ports:
+      - "8081:8081"
+    links:
+      - "service-registry"
+      - "config-server"
+    environment:
+      - EUREKA_CLIENT_SERVICE-URL_DEFAULTZONE=http://service-registry:8761/eureka
+
+  musicmanager:
+    build: ./Predjeskovic_Microservice_MusicManager
+    ports:
+      - "8082:8082"
+    links:
+      - "service-registry"
+      - "config-server"
+      - "mongodb"
+    environment:
+      - EUREKA_CLIENT_SERVICE-URL_DEFAULTZONE=http://service-registry:8761/eureka
+      - SPRING_DATA_MONGODB_HOST=mongodb
+
+  mongodb:
+    image: bitnami/mongodb:latest
+    ports:
+      - "27017"
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+
+  calendar:
+    build: ./Predjeskovic_Microservice_Calendar
+    ports:
+      - "8080:8080"
+
+
