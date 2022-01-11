@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 @Service
-@FeignClient(value = "Calendar", url = "localhost:8081/Predjeskovic_Microservice_Calendar_1_0_SNAPSHOT_war")
+@FeignClient(value = "Calendar", url = "localhost:8080/Predjeskovic_Microservice_Calendar-1.0-SNAPSHOT")
 public interface ClientCalendarService {
 
 

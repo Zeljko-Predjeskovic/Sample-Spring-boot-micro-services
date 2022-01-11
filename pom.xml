@@ -19,7 +19,9 @@
         <module>Predjeskovic_Microservice_Calendar</module>
         <module>Predjeskovic_Microservice_MusicManager</module>
         <module>Predjeskovic_Microservice_Giraffobot</module>
+        <module>ConfigServer</module>
         <module>ServiceRegistry</module>
+        <module>TestContainers</module>
     </modules>
 
 </project>
