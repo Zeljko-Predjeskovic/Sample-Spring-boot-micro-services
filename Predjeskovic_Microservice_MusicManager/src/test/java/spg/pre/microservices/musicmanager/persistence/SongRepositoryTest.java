@@ -23,7 +23,7 @@ public class SongRepositoryTest {
     @Autowired
     private MongoTemplate mongoTemplate;
 
-    private Song song;
+    private Song song = null;
 
     private Faker faker = new Faker();
 
@@ -48,7 +48,9 @@ public class SongRepositoryTest {
 
     @Test @Order(3)
     public void assertPartialUpdateSong(){
+        String s =song.getGenre();
         songRepository.partialUpdate(song.getId(),"genre","Rock");
+        Assertions.assertFalse(s.equals(songRepository.findByMusicTitle(song.getMusicTitle()).getGenre()));
     }
 
     @Test @Order(4)
